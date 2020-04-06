@@ -1,0 +1,10 @@
+apiVersion: v1
+metadata:
+  name: {{ .Release.Name }}-env
+kind: Secret
+data:
+  PASSWORD: {{ .Values.http_auth.password | b64enc }}
+  REDIS_HOST: {{ .Values.redis.host | b64enc }}
+  REDIS_PORT: {{ .Values.redis.port | b64enc }}
+  THEBIGSECRET: {{ .Values.app.secret | b64enc }}
+  USERNAME: {{ .Values.http_auth.username | b64enc }}

@@ -1,0 +1,23 @@
+image: jaysnee/terraform-test:0.3
+replicaCount: 3
+http_auth:
+  password: not-set
+  username: change-me
+app:
+  secret: not-set
+redis:
+  port: "6789"
+  host: localhost
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 5000
+podSecurityContext:
+  fsGroup: 2000
+securityContext:
+  capabilities:
+    drop:
+    - ALL
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  runAsUser: 1000
