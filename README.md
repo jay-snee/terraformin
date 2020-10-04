@@ -19,7 +19,7 @@ It also has an endpoint protected by basic http auth that will provide you with 
 
 ### State storage
 
-Kubernetes & Terraform both use AWS S3 for remote state storage and Terraform also uses a DynamoDB table to enable state locking. Whilst a fully managed cluster configuration is outside of the scope of this assignment, we can bootstrap state management in Kubernetes & Terraform with the Terraform configuration in `terraform/state-init`
+Kubernetes & Terraform both use AWS S3 for remote state storage and Terraform also uses a DynamoDB table to enable state locking. Whilst a fully managed cluster configuration is outside of scope, we can bootstrap state management in Kubernetes & Terraform with the Terraform configuration in `terraform/state-init`
 
 ```
 cd terraform/state-init
@@ -27,9 +27,9 @@ terraform init
 terraform apply
 ```
 
-#### Assignment caveat:
+#### Caveat:
 
-Bucket versioning is not enabled to ensure cleaner tear-down for project resources in the context of this assignment. 
+Bucket versioning is not enabled to ensure cleaner tear-down for project resources. 
 
 ### Kubernetes
 
@@ -61,10 +61,6 @@ Application Docker image is created by running the build script:
 `./build.sh`
 
 This will simply build the image and push it to DockerHub making it available to be pulled later during the release phase. Shebang is currently set for `zsh` so `bash` users will need to be mindful to change that. 
-
-#### Assignment caveat:
-
-For production deployments I would usually opt for an integrated build/release/run pipeline embeded within a full PaaS solution such as [this provided by Workflow](https://docs.teamhephy.com/understanding-workflow/concepts/#build-release-run), however deploying Workflow in the context of this assignment wouldn't allow me to demonstrate my knowledge of lower level resources and concepts so I've chosen not to use it in this case. 
 
 ## Release
 
