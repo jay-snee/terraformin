@@ -1,6 +1,6 @@
-# Simple app
-This is a simple web app that returns counter on how many times page has been seen.
-The application is using redis to store the count.
+# How to Terraform. 
+This is a flask app that returns a counter on how many times page has been loaded.
+The application uses Redis to store the page count.
 
 It also has an endpoint protected by basic http auth that will provide you with a secret string.
 
