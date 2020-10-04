@@ -39,5 +39,5 @@ variable "app_secret" {
 variable "release_name" {
   description = "Helm release name"
   type        = string
-  default     = "bloomreach-release"
+  default     = "terraformin-release"
 }

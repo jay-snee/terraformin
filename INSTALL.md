@@ -12,7 +12,7 @@ Set cluster variables:
 
 ```
 export NAME=kube.example.com
-export KOPS_STATE_STORE=s3://bloomreach-k8s-state-store
+export KOPS_STATE_STORE=s3://terraformin-k8s-state-store
 export ACCOUNT_ID=$(aws sts get-caller-identity --output text --query 'Account')
 ```
 
@@ -167,7 +167,7 @@ terraform destroy
 
 
 ```
-kops delete cluster --name bloom.fcctrl.com --yes
+kops delete cluster --name terraformin.example.com --yes
 ```
 
 ```
@@ -178,7 +178,7 @@ terraform destroy
 This will fail with something like the below error as Terraform doesn't clean out it's state. The Terraform state bucket will need to be manually deleted (delete all files in the bucket, then delete the bucket itself) via the AWS console.
 
 ```
-Error: error deleting S3 Bucket (bloomreach-tf-state-store): BucketNotEmpty: The bucket you tried to delete is not empty
+Error: error deleting S3 Bucket (terraformin-tf-state-store): BucketNotEmpty: The bucket you tried to delete is not empty
         status code: 409, request id: AD5DB0AE8F6DF7FB, host id: mJV5fR5tx4BHPahvOqGGEOdtvSyNB3qxSsz/oDs0HbBB/miXy9Nk1yf+JdbLjUyZdVxF6+7LU0A=
 ```
 

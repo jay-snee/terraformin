@@ -1,9 +1,9 @@
 terraform {
   backend "s3" {
-    bucket         = "bloomreach-tf-state-store"
+    bucket         = "terraformin-tf-state-store"
     key            = "deploy/helm/terraform.tfstate"
     region         = "eu-west-1"
-    dynamodb_table = "bloomreach-tf-locks"
+    dynamodb_table = "terraformin-tf-locks"
     encrypt        = true
   }
 }

@@ -47,11 +47,11 @@ variable "redis_parameter_group_name" {
 variable "redis_engine_version" {
   description = "ElasticCache redis engine version"
   type        = string
-  default = "3.2.10"
+  default     = "3.2.10"
 }
 
 variable "redis_port" {
   description = "ElasticCache redis port number"
   type        = string
-  default = "6379"
+  default     = "6379"
 }

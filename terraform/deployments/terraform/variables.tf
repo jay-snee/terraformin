@@ -1,7 +1,7 @@
 variable "cluster_name" {
   description = "Kubernetes cluster name"
   type        = string
-  default     = "bloom.fcctrl.com"
+  default     = "terraformin.example.com"
 }
 
 variable "region" {
@@ -13,13 +13,13 @@ variable "region" {
 variable "namespace" {
   description = "Flask app Kubernetes namespace"
   type        = string
-  default     = "bloomreach-terraform"
+  default     = "terraformin-terraform"
 }
 
 variable "release_name" {
   description = "Helm release name"
   type        = string
-  default     = "bloom-terraform-release"
+  default     = "terraformin-terraform-release"
 }
 
 variable "http_username" {
